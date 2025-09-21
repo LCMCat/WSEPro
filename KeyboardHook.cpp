@@ -227,11 +227,13 @@ void KeyboardHook::Initialize(Settings* settings, WindowManager* windowManager) 
 
 bool KeyboardHook::Hook() {
     if (hookInstalled) {
+        isHooked = true;
         return true;
     }
     
     hHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardHook::KeyboardProc, GetModuleHandle(NULL), 0);
     if (hHook == NULL) {
+        isHooked = false;
         if (uiManager) {
             uiManager->AddLog("[调试] 键盘钩子安装失败");
         }
@@ -239,6 +241,7 @@ bool KeyboardHook::Hook() {
     }
     
     hookInstalled = true;
+    isHooked = true;
     
     // if (uiManager) {
     //     uiManager->AddLog("[调试] 键盘钩子安装成功");
@@ -255,6 +258,7 @@ void KeyboardHook::Unhook() {
     UnhookWindowsHookEx(hHook);
     hHook = NULL;
     hookInstalled = false;
+    isHooked = false;
 }
 
 void KeyboardHook::LoadKeyBindings() {

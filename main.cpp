@@ -45,6 +45,7 @@ int main() {
     
     keyboardHook.Initialize(&settings, &windowManager);
     keyboardHook.SetUIManager(&uiManager);
+    keyboardHook.Hook();
     
     uiManager.Initialize(&settings);
     
