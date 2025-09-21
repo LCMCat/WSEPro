@@ -1,7 +1,9 @@
-# Window Show/Hide Engine (WSEPro) [v3.0]
+# Window Showing Engine
 
-![Windows Version](https://img.shields.io/badge/Windows-10%2B-blue) 
+![Windows Version](https://img.shields.io/badge/Windows-7%2B-blue) 
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+##The best gift for myself in 2022.
 
 ## ✨ Features
 - Real-time keyboard hooking technology
@@ -12,7 +14,7 @@
 ## 🛠️ Build Instructions
 ### Requirements
 - MinGW-w64 with POSIX threads
-- Windows SDK 10.0+
+- Windows 7+
 
 ```bash
 git clone https://github.com/LCMCat/WSEPro.git
